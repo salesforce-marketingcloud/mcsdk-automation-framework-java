@@ -1,0 +1,10 @@
+    private {{ApiType}} {{fieldName}};
+
+    public {{ApiType}} get{{ApiType}}() {
+        if({{fieldName}} == null)
+        {
+            {{fieldName}} = new {{ApiType}}(authBaseUrl, clientId, clientSecret, accountId, scope);
+        }
+        return {{fieldName}};
+    }
+
