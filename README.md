@@ -6,7 +6,7 @@ This repo is part of the Salesforce Marketing Cloud SDK Automation Framework.
 ## Contents
 - Custom Swagger Codegen [mustache files](https://github.com/salesforce-marketingcloud/mcsdk-automation-framework-java/tree/master/resources/templates/mustache)
 - Python Scripts for Java SDK Automation
-- Client generator which generates the [Client](https://github.com/salesforce-marketingcloud/mcsdk-automation-framework-java/blob/master/src/generator/clientgenerator/src/main/java/com/github/salesforce/marketingcloud/ClientGenerator.java) class
+- Client generator which generates the [Client](https://github.com/salesforce-marketingcloud/mcsdk-automation-java/blob/master/src/main/java/com/github/salesforce/marketingcloud/javasdk/api/Client.java) class
 
 ## Getting Started
 
