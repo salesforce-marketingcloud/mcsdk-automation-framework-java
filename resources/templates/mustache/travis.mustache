@@ -5,6 +5,17 @@ language: java
 dist: trusty
 jdk:
   - oraclejdk8
+
+branches:
+    only:
+        - master
+        - develop
+        - /^feature\/.*$/
+        - /^release\/.*$/
+        - /^hotfix\/.*$/
+        - /^*.0$/
+        - /^ci\/*.0$/
+
 install:
   # override install step to avoid `gradle assemble` being called even if not needed
   - true
