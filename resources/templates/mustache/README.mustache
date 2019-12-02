@@ -27,6 +27,51 @@ The easiest way to install the [Salesforce Marketing Cloud SDK](https://search.m
 
 ## Getting Started
 
+### Usage scenarios
+#### 1.Basic usage
+
+Please *note* that the configuration in this scenario is taken from the environment variables.
+```
+
+Client client = new Client();
+AssetApi assetApi = client.getAssetApi();
+Asset asset = createAsset();   // your own implementation to get an Asset instance
+
+Asset result = assetApi.createAsset(asset);
+
+System.out.println(result);
+
+```
+
+*Environment variables:*
+* SFMC_ACCOUNT_ID
+* SFMC_AUTH_BASE_URL  (Authentication TSE)
+* SFMC_CLIENT_ID
+* SFMC_CLIENT_SECRET
+* SFMC_COUNTRY_CODE   (eg: US)
+* SFMC_KEYWORD        (SMS keyword)
+* SFMC_SHORT_CODE     (SMS short code)
+
+#### 2.Setting the configuration using the Client class constructor parameters
+```
+
+Client client = new Client(
+    "<AUTH_BASE_URL>",
+    "<CLIENT_ID>",
+    "<CLIENT_SECRET>",
+    "<ACCOUNT_ID>",
+    "<APPLICATION_DATA-ACCESS_PERMISSIONS>"
+);
+
+AssetApi assetApi = client.getAssetApi();
+Asset asset = createAsset();   // your own implementation to get an Asset instance
+
+Asset result = assetApi.createAsset(asset);
+
+System.out.println(result);
+
+```
+
 To find more information on how to consume the SDK, Refer to the [Regression tests](https://github.com/salesforce-marketingcloud/mcsdk-automation-java/tree/master/src/test/java/com/github/salesforce/marketingcloud/javasdk/api) or the [Code Samples](https://github.com/salesforce-marketingcloud/mcsdk-automation-java/tree/master/samples)
 
 ### Note
