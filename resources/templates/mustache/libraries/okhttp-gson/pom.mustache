@@ -4,30 +4,25 @@
     <groupId>{{groupId}}</groupId>
     <artifactId>{{artifactId}}</artifactId>
     <packaging>jar</packaging>
-    <name>{{artifactId}}</name>
+    <name>Salesforce Marketing Cloud Java SDK</name>
     <version>{{artifactVersion}}</version>
-    <url>{{artifactUrl}}</url>
-    <description>{{artifactDescription}}</description>
-    <scm>
-        <connection>{{scmConnection}}</connection>
-        <developerConnection>{{scmDeveloperConnection}}</developerConnection>
-        <url>{{scmUrl}}</url>
-    </scm>
+    <url>https://github.com/salesforce-marketingcloud/mcsdk-automation-java</url>
+    <description>The Salesforce Marketing Cloud Java SDK</description>
 
     <licenses>
         <license>
-            <name>{{licenseName}}</name>
-            <url>{{licenseUrl}}</url>
+            <name>BSD 3-Clause License</name>
+            <url>http://opensource.org/licenses/BSD-3-Clause</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <developers>
         <developer>
-            <name>{{developerName}}</name>
-            <email>{{developerEmail}}</email>
-            <organization>{{developerOrganization}}</organization>
-            <organizationUrl>{{developerOrganizationUrl}}</organizationUrl>
+            <name>Salesforce Marketing Cloud SDK Team</name>
+            <email>mc_sdk@salesforce.com</email>
+            <organization>Salesforce</organization>
+            <organizationUrl>https://www.salesforce.com/products/marketing-cloud/</organizationUrl>
         </developer>
     </developers>
 
@@ -216,63 +211,42 @@
             <artifactId>gson-fire</artifactId>
             <version>${gson-fire-version}</version>
         </dependency>
-        {{#joda}}
-            <dependency>
-                <groupId>joda-time</groupId>
-                <artifactId>joda-time</artifactId>
-                <version>${jodatime-version}</version>
-            </dependency>
-        {{/joda}}
-        {{#threetenbp}}
-            <dependency>
-                <groupId>org.threeten</groupId>
-                <artifactId>threetenbp</artifactId>
-                <version>${threetenbp-version}</version>
-            </dependency>
-        {{/threetenbp}}
-        {{#useBeanValidation}}
-            <!-- Bean Validation API support -->
-            <dependency>
-                <groupId>javax.validation</groupId>
-                <artifactId>validation-api</artifactId>
-                <version>1.1.0.Final</version>
-                <scope>provided</scope>
-            </dependency>
-        {{/useBeanValidation}}
-        {{#performBeanValidation}}
-            <!-- Bean Validation Impl. used to perform BeanValidation -->
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-validator</artifactId>
-                <version>5.4.1.Final</version>
-            </dependency>
-            <dependency>
-                <groupId>javax.el</groupId>
-                <artifactId>el-api</artifactId>
-                <version>2.2</version>
-            </dependency>
-        {{/performBeanValidation}}
-        {{#parcelableModel}}
-            <!-- Needed for Parcelable support-->
-            <dependency>
-                <groupId>com.google.android</groupId>
-                <artifactId>android</artifactId>
-                <version>4.1.1.4</version>
-                <scope>provided</scope>
-            </dependency>
-        {{/parcelableModel}}
+        <dependency>
+            <groupId>org.threeten</groupId>
+            <artifactId>threetenbp</artifactId>
+            <version>${threetenbp-version}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3-version}</version>
         </dependency>
-        <!-- test dependencies -->
         <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest</artifactId>
-            <version>${hamcrest-version}</version>
-            <scope>test</scope>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.17.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator-annotation-processor</artifactId>
+            <version>6.0.17.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>2.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
+        <!-- test dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -283,6 +257,13 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>${mockito-core-version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrest-version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <properties>
@@ -293,12 +274,7 @@
         <swagger-core-version>1.5.18</swagger-core-version>
         <okhttp-version>2.7.5</okhttp-version>
         <gson-version>2.8.1</gson-version>
-        {{#joda}}
-            <jodatime-version>2.9.9</jodatime-version>
-        {{/joda}}
-        {{#threetenbp}}
-            <threetenbp-version>1.3.5</threetenbp-version>
-        {{/threetenbp}}
+        <threetenbp-version>1.3.5</threetenbp-version>
         <maven-plugin-version>1.0.0</maven-plugin-version>
         <junit-version>4.12</junit-version>
         <hamcrest-version>2.1</hamcrest-version>
