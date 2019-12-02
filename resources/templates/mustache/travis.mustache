@@ -16,9 +16,22 @@ branches:
         - /^*.0$/
         - /^ci\/*.0$/
 
+stages:
+  - unit-test
+  - integration-test
+
 install:
   # override install step to avoid `gradle assemble` being called even if not needed
   - true
 script:
-  # test using maven
-  - mvn test
+  # override default script step
+  - true
+
+jobs:
+  include:
+    - stage: unit-test
+      name: "Unit tests"
+      script: mvn test -Dtest=!*IntegrationTest,!*ApiTest
+    - stage: integration-test
+      name: "Integration tests"
+      script: mvn test -Dtest=*IntegrationTest,*ApiTest
