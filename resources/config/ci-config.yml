@@ -1,0 +1,16 @@
+generators:
+  java: "clientgenerator"
+  jarName: "java-sdk-client-generator-1.0.0.jar"
+
+repos:
+  current:
+    name: "mcsdk-automation-framework-java"
+  core:
+    name: "mcsdk-automation-framework-core"
+    owner: "salesforce-marketingcloud"
+    swagger_cli: "{%repos_core_dir%}/bin/swagger-codegen-cli.jar"
+    swagger_spec: "{%repos_core_dir%}/resources/sfmc-openapi-v2.json"
+  sdk:
+    name: "mcsdk-automation-java"
+    owner: "salesforce-marketingcloud"
+    apiFolderPath: "src/main/java/com/github/salesforce/marketingcloud/javasdk/api"
