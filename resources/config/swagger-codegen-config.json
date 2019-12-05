@@ -1,7 +1,7 @@
 {
     "groupId": "com.github.salesforce-marketingcloud",
     "artifactId": "java-sdk",
-    "artifactVersion": "1.0.0",
+    "artifactVersion": "1.1.0",
     "invokerPackage": "com.github.salesforce.marketingcloud.javasdk",
     "modelPackage": "com.github.salesforce.marketingcloud.javasdk.model",
     "apiPackage": "com.github.salesforce.marketingcloud.javasdk.api",
